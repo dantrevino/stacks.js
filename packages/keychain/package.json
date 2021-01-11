@@ -1,14 +1,20 @@
 {
   "name": "@stacks/keychain",
-  "version": "1.0.0-beta.12",
+  "version": "1.0.0-beta.21",
   "description": "A package for managing Stacks keychains",
   "keywords": [
     "Stacks",
     "Blockstack",
     "Keychain"
   ],
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "umd:main": "dist/keychain.umd.production.js",
+  "unpkg": "dist/keychain.cjs.production.min.js",
+  "gitHead": "77b4d6d531b74996e4b7a0cbd1cf5b8358a690ce",
   "author": "Hank Stoever",
-  "types": "./dist/index.d.ts",
+  "typings": "./dist/keychain/src/index.d.ts",
   "homepage": "https://blockstack.org",
   "contributors": [
     {
@@ -29,6 +35,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blockstack/blockstack.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blockstack/blockstack.js/issues"
   },
   "scripts": {
     "lint": "yarn lint:eslint && yarn lint:prettier",
@@ -68,10 +77,10 @@
   },
   "dependencies": {
     "@blockstack/rpc-client": "^0.3.0-alpha.11",
-    "@stacks/common": "^1.0.0-beta.12",
-    "@stacks/encryption": "^1.0.0-beta.12",
-    "@stacks/storage": "^1.0.0-beta.12",
-    "@stacks/transactions": "^1.0.0-beta.12",
+    "@stacks/common": "^1.0.0-beta.20",
+    "@stacks/encryption": "^1.0.0-beta.20",
+    "@stacks/storage": "^1.0.0-beta.20",
+    "@stacks/transactions": "^1.0.0-beta.20",
     "bip32": "^2.0.4",
     "bip39": "^3.0.2",
     "bitcoinjs-lib": "^5.1.6",
@@ -81,15 +90,5 @@
     "prettier": "^2.0.5",
     "triplesec": "^3.0.27",
     "zone-file": "^1.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/blockstack/blockstack.js/issues"
-  },
-  "sideEffects": false,
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "typings": "dist/keychain/src/index.d.ts",
-  "umd:main": "dist/keychain.umd.production.js",
-  "unpkg": "dist/keychain.cjs.production.min.js",
-  "gitHead": "77b4d6d531b74996e4b7a0cbd1cf5b8358a690ce"
+  }
 }

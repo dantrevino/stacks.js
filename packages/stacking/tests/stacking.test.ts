@@ -31,10 +31,10 @@ const poxInfo = {
 };
 
 const balanceInfo = {
-  balance: "90000000000000",
-  total_sent: "0",
-  total_received: "90000000000000",
-  unlock_height: 1000
+  balance: "0x0000000000000000000052c396acadf8",
+  locked: "0x0000000000000000000050f1ed629000",
+  unlock_height: 3960,
+  nonce:0
 }
 
 const coreInfo = {
@@ -293,7 +293,7 @@ test('get stacking status', async () => {
   expect(stackingStatus.details.amount_microstx).toEqual(amountMicrostx.toString());
   expect(stackingStatus.details.first_reward_cycle).toEqual(firstRewardCycle);
   expect(stackingStatus.details.lock_period).toEqual(lockPeriod);
-  expect(stackingStatus.details.unlock_height).toEqual(balanceInfo.unlock_height);
+  // expect(stackingStatus.details.burnchain_unlock_height).toEqual(balanceInfo.burnchain_unlock_height);
   expect(stackingStatus.details.pox_address.version.toString()).toEqual(version);
   expect(stackingStatus.details.pox_address.hashbytes.toString()).toEqual(hashbytes);
 })
@@ -375,7 +375,7 @@ test('get account balance', async () => {
   const responseBalanceInfo = await client.getAccountBalance();
 
   expect(fetchMock.mock.calls[0][0]).toEqual(network.getAccountApiUrl(address));
-  expect(responseBalanceInfo.toString()).toEqual(balanceInfo.balance);
+  expect(responseBalanceInfo.toString()).toEqual(new BN(balanceInfo.balance.substr(2), 'hex').toString());
 })
 
 test('pox address hash mode', async () => {

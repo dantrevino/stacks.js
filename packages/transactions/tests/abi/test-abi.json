@@ -30,9 +30,12 @@
     {
       "name": "buffer-test",
       "access": "public",
-      "args": [
-        { "name": "arg1", "type": { "buffer": { "length": 6 } } }
-      ],
+      "args": [{ "name": "arg1", "type": { "buffer": { "length": 6 } } }]
+    },
+    {
+      "name": "trait-test",
+      "access": "public",
+      "args": [{ "name": "arg1", "type": "trait_reference" }],
       "outputs": { "type": { "response": { "ok": "bool", "error": "none" } } }
     }
   ],

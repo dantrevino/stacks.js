@@ -86,6 +86,29 @@ test('ABI validation buffer', () => {
   );
 });
 
+test('ABI validation trait reference', () => {
+  const contractAddress = 'ST3KC0MTNW34S1ZXD36JYKFD3JJMWA01M55DSJ4JE';
+  const contractName = 'test';
+  const functionName = 'trait-test';
+
+  const payloadCorrectTrait = createContractCallPayload(
+    contractAddress,
+    contractName,
+    functionName,
+    [contractPrincipalCV('ST3KC0MTNW34S1ZXD36JYKFD3JJMWA01M55DSJ4JE', 'test')]
+  );
+
+  validateContractCall(payloadCorrectTrait, TEST_ABI);
+
+  const payloadWrongTrait = createContractCallPayload(contractAddress, contractName, functionName, [
+    standardPrincipalCV('ST3KC0MTNW34S1ZXD36JYKFD3JJMWA01M55DSJ4JE'),
+  ]);
+
+  expect(() => validateContractCall(payloadWrongTrait, TEST_ABI)).toThrow(
+    'Clarity function `trait-test` expects argument 1 to be of type trait_reference, not principal'
+  );
+});
+
 test('ABI validation fail, tuple mistyped', () => {
   const contractAddress = 'ST3KC0MTNW34S1ZXD36JYKFD3JJMWA01M55DSJ4JE';
   const contractName = 'test';
@@ -134,7 +157,7 @@ test('ABI validation fail, tuple mistyped', () => {
         (key4 principal) 
         (key5 (buff 3)) 
         (key6 (optional none)) 
-        (key7 (responseError bool)) 
+        (key7 (response UnknownType bool)) 
         (key8 bool) 
         (key9 (string-ascii 11)) 
         (key10 (string-utf8 11)))`
@@ -187,7 +210,7 @@ test('ABI validation fail, tuple wrong key', () => {
       (key4 principal) 
       (key5 (buff 3)) 
       (key6 (optional bool)) 
-      (key7 (responseOk bool)) 
+      (key7 (response bool UnknownType)) 
       (key9 (list 2 bool)))
     `
   );

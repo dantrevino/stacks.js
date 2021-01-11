@@ -1,6 +1,6 @@
 {
   "name": "@stacks/storage",
-  "version": "1.0.0-beta.12",
+  "version": "1.0.0-beta.20",
   "description": "Stacks storage library",
   "author": "yknl <yukanliao@gmail.com>",
   "homepage": "https://blockstack.org",
@@ -37,9 +37,9 @@
     "url": "https://github.com/blockstack/blockstack.js/issues"
   },
   "dependencies": {
-    "@stacks/auth": "^1.0.0-beta.12",
-    "@stacks/common": "^1.0.0-beta.12",
-    "@stacks/encryption": "^1.0.0-beta.12"
+    "@stacks/auth": "^1.0.0-beta.20",
+    "@stacks/common": "^1.0.0-beta.20",
+    "@stacks/encryption": "^1.0.0-beta.20"
   },
   "devDependencies": {
     "@types/jest": "^24.9.0",
@@ -51,7 +51,7 @@
   },
   "sideEffects": false,
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/storage.esm.js",
   "typings": "dist/storage/src/index.d.ts",
   "umd:main": "dist/storage.umd.production.js",
   "unpkg": "dist/storage.cjs.production.min.js",

@@ -958,6 +958,11 @@
     "@blockstack/stacks-transactions" "0.5.1"
     cross-fetch "^3.0.4"
 
+"@blockstack/stacks-blockchain-api-types@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@blockstack/stacks-blockchain-api-types/-/stacks-blockchain-api-types-0.5.3.tgz#d828dd73eca0526bccb1e27685fc2104e67b5ef6"
+  integrity sha512-M2SU4C5IK15iTt+n34TGeX29aDdiKJq7gkEls7o8KWRe6hkBOA0LnF8+6g3q9t+ZXTBd49a4oiiWrFY0RgvGag==
+
 "@blockstack/stacks-transactions@0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@blockstack/stacks-transactions/-/stacks-transactions-0.5.1.tgz#b58057d52567406ce26669ba0abcaf583cf2d21c"
@@ -976,25 +981,6 @@
     lodash "^4.17.15"
     randombytes "^2.1.0"
     ripemd160 "^2.0.2"
-    sha.js "^2.4.11"
-    smart-buffer "^4.1.0"
-
-"@blockstack/stacks-transactions@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@blockstack/stacks-transactions/-/stacks-transactions-0.7.0.tgz#c587f69879b1903bada87769f1d6d1217479336a"
-  integrity sha512-9IUR641PJpigYDCWdtKFgBIk0Oxyoc2M2XVdyaEOEcRhI+4lcacDhsuseAmGbkB9FhJgJcNicWPujUPNFl1XCw==
-  dependencies:
-    "@types/bn.js" "^4.11.6"
-    "@types/elliptic" "^6.4.12"
-    "@types/randombytes" "^2.0.0"
-    "@types/sha.js" "^2.4.0"
-    bn.js "^4.11.9"
-    c32check "^1.1.1"
-    cross-fetch "^3.0.5"
-    elliptic "^6.5.2"
-    lodash "^4.17.20"
-    randombytes "^2.1.0"
-    ripemd160-min "^0.0.6"
     sha.js "^2.4.11"
     smart-buffer "^4.1.0"
 
@@ -2369,28 +2355,17 @@
   resolved "https://registry.yarnpkg.com/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
-"@stacks/connect-ui@^2.14.0":
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/@stacks/connect-ui/-/connect-ui-2.14.0.tgz#d5fbbb8622a8117038a500430f93e2073d118afa"
-  integrity sha512-hASEJIjRtl0sNi1yl5v3KjPP73xaletz5dOzhVQDufrPjl27+HLum3pEuCUnd1K+vfdsUfybk9Jbwx+lfejDTA==
+"@stacks/blockchain-api-client@^0.34.1":
+  version "0.34.1"
+  resolved "https://registry.yarnpkg.com/@stacks/blockchain-api-client/-/blockchain-api-client-0.34.1.tgz#e079dac704ddcf5cdffebec48cde89adcdcbde4e"
+  integrity sha512-dmLrE465/cPFkLMFIwdx2tWyLLM9dLQH/9ocrH5kLIj7/dnVSemUdMZr2Izyvttz9oQAUFH2aIBrUgAjNNDSrw==
   dependencies:
-    "@stencil/core" "^1.17.3"
-
-"@stacks/connect@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@stacks/connect/-/connect-4.0.0.tgz#2c351600d711a2d36431b60117d00e0572057da8"
-  integrity sha512-gfpy39fYAL5L/Q2NmwkHqRGEF3saPDy6F8uRpclkbAQBQHQrCQbYkI9kCToJb1lOuU248KqviM6aOIxZBGaxZg==
-  dependencies:
-    "@blockstack/stacks-transactions" "0.7.0"
-    "@stacks/connect-ui" "^2.14.0"
-    jsontokens "^3.0.0"
-
-"@stencil/core@^1.17.3":
-  version "1.17.4"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-1.17.4.tgz#f7beb16ecb3344c80e053fece013ae499adc7c54"
-  integrity sha512-dmuNYM6fnHPvE2ptHoUBQtjcpXqrHnkDtdyUD6/JrZWcJt6jBtrykewObOxzpDCMLs+NT7668ussRagdVL03gQ==
-  dependencies:
-    typescript "3.9.7"
+    "@blockstack/stacks-blockchain-api-types" "^0.5.3"
+    "@types/ws" "^7.2.6"
+    cross-fetch "^3.0.6"
+    eventemitter3 "^4.0.4"
+    jsonrpc-lite "^2.2.0"
+    ws "^7.3.1"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2806,6 +2781,13 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/triplesec/-/triplesec-3.0.0.tgz#709d45908503b7027525daeeeaaaa3176acda758"
   integrity sha512-8tFHnI6FEOcUh2NpUwxjEwrtLDmybKpnvWYe09DQ52O21yphEZCdzDsjzd8NMysqmeOqGoQEIokMJP92Hvz1Bg==
+  dependencies:
+    "@types/node" "*"
+
+"@types/ws@^7.2.6":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-7.4.0.tgz#499690ea08736e05a8186113dac37769ab251a0e"
+  integrity sha512-Y29uQ3Uy+58bZrFLhX36hcI3Np37nqWE7ky5tjiDoy1GDZnIwVxS0CgF+s+1bXMzjKBFy+fqaRfb708iNzdinw==
   dependencies:
     "@types/node" "*"
 
@@ -5023,7 +5005,7 @@ cross-fetch@^2.2.2:
     node-fetch "2.1.2"
     whatwg-fetch "2.0.4"
 
-cross-fetch@^3.0.4, cross-fetch@^3.0.5:
+cross-fetch@^3.0.4, cross-fetch@^3.0.5, cross-fetch@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.6.tgz#3a4040bc8941e653e0e9cf17f29ebcd177d3365c"
   integrity sha512-KBPUbqgFjzWlVcURG+Svp9TlhA5uliYtiNx/0r8nv0pdypeQCRJ9IaSIc3q/x3q8t3F75cHuwxVql1HFGHCNJQ==
@@ -6113,6 +6095,11 @@ eventemitter3@^3.1.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
   integrity sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==
+
+eventemitter3@^4.0.4:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
+  integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
 events@^3.0.0:
   version "3.2.0"
@@ -8848,6 +8835,11 @@ jsonparse@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
   integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
+
+jsonrpc-lite@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jsonrpc-lite/-/jsonrpc-lite-2.2.0.tgz#fb3aa9d292c8970eb7f83c6040c6554767bbc6a6"
+  integrity sha512-/cbbSxtZWs1O7R4tWqabrCM/t3N8qKUZMAg9IUqpPvUs6UyRvm6pCNYkskyKN/XU0UgffW+NY2ZRr8t0AknX7g==
 
 jsontokens@^2.0.2:
   version "2.0.2"
@@ -13165,7 +13157,7 @@ typeforce@^1.11.3, typeforce@^1.11.5:
   resolved "https://registry.yarnpkg.com/typeforce/-/typeforce-1.18.0.tgz#d7416a2c5845e085034d70fcc5b6cc4a90edbfdc"
   integrity sha512-7uc1O8h1M1g0rArakJdf0uLRSSgFcYexrVoKo+bzJd32gd4gDy2L/Z+8/FjPnU9ydY3pEnVPtr9FyscYY60K1g==
 
-typescript@3.9.7, typescript@^3.7.2, typescript@^3.7.3, typescript@^3.9.7:
+typescript@^3.7.2, typescript@^3.7.3, typescript@^3.9.7:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
@@ -13807,6 +13799,11 @@ ws@^7.0.0:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
   integrity sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
+
+ws@^7.3.1:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.0.tgz#a5dd76a24197940d4a8bb9e0e152bb4503764da7"
+  integrity sha512-kyFwXuV/5ymf+IXhS6f0+eAFvydbaBW3zjpT6hUdAh/hbVjTIB5EHBGi0bPoCLSK2wcuz3BrEkB9LrYv1Nm4NQ==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
